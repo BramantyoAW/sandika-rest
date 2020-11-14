@@ -4,5 +4,5 @@
 
 RUN : 
 1. composer require laravel/passport
-2. php artisan migrate
-3. php artisan serve *Execute/Run all program*
+2. php artisan migrate -> *execute database migrate*
+3. php artisan serve -> *Execute/Run all program*
