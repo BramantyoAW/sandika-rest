@@ -21,7 +21,17 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::post('login', 'API\UserController@login');
 Route::post('register', 'API\UserController@register');
 
+
+
 Route::group(['middleware' => 'auth:api'], function(){
     Route::get('user/detail', 'Api\UserController@details');
+     //------------------------------ CUSTOMER ADDRESS -----------------//
+     Route::post('customeraddress/created', 'Api\CustomerAddressController@newCustomerAddress');
+     Route::get('customeraddress/getaddressbyid/{id}', 'Api\CustomerAddressController@getCustomerAddressById');
+     Route::delete('customeraddress/deleteaddress/{id}', 'Api\CustomerAddressController@deleteCustomerAddress');
+     Route::put('customeraddress/updateaddress/{id}', 'Api\CustomerAddressController@updateCustomerAddress');
+     //--------------------------------- end ----------------------------//
     Route::post('logout', 'Api\UserController@logout');
+   
 }); 
+
